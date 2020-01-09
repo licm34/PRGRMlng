@@ -2,20 +2,18 @@
 #include<time.h>
 #include<stdlib.h>
 
-void SelectionSort(int arr[]){
-	int min, tmp, idx;
+void InsertionSort(int arr[]){
+	int tmp, idx;
 	for(int i=0;i<9;i++){  
-		idx=0;
-		for(int j=i;j<10;j++){
-			if(arr[idx]>arr[j]){	
-			min=arr[j];
-			idx=j;
-			}
+		idx=i;
+		while(arr[idx]>arr[idx+1]){	
+			tmp=*(arr+idx);
+			*(arr+idx)=*(arr+idx+1);
+			*(arr+idx+1)=tmp;	
+			idx--;
 		}
-		tmp=*(arr+idx);
-		*(arr+idx)=*(arr+i);
-		*(arr+i)=tmp;
-	} 
+	}
+
 }
 
 int main(){
@@ -28,7 +26,7 @@ int main(){
 	printf("%d ", randomnum[i]);
 	}printf("\n");
 	
-	SelectionSort(randomnum);
+	InsertionSort(randomnum);
 	
 	for(int i=0;i<10;i++) printf("%d ", randomnum[i]);
 	
