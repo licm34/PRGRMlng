@@ -20,3 +20,12 @@ c1.setValue('one')
 #c1.v1='one'
 c1.v2=30
 print(c1.add())
+
+
+#inheritance
+class CalMultiply(Cal):
+    def mul(self):
+        return self.v1*self.v2
+
+c2=CalMultiply(5, 5)
+print(c2.mul())
