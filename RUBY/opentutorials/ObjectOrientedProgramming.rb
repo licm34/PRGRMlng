@@ -31,3 +31,14 @@ p c1.sub()
 c1.setValue('one')
 p c1.add()
 p c1.getValue()
+
+
+#inheritance
+class CalMultiply < Cal
+  def mul()
+    return @v1*@v2
+  end
+end
+
+c2=CalMultiply.new(5, 5)
+p c2.mul()
